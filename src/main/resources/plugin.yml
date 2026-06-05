@@ -1,7 +1,7 @@
 name: HoverWorth
-version: '1.4'
+version: '${project.version}'
 main: com.jolly.hoverworth.HoverWorth
-api-version: '1.21'
+api-version: '26.1.2'
 authors: [ Jolly ]
 folia-supported: true
 depend: [packetevents]
