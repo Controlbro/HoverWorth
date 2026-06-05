@@ -13,6 +13,8 @@
 
     <properties>
         <java.version>25</java.version>
+        <paper.version>26.1.2.build.66-stable</paper.version>
+        <packetevents.version>2.12.1</packetevents.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -68,13 +70,13 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>26.1.2.build.66-stable</version>
+            <version>${paper.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.github.retrooper</groupId>
             <artifactId>packetevents-spigot</artifactId>
-            <version>2.12.1</version>
+            <version>${packetevents.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

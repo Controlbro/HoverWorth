@@ -7,6 +7,8 @@ import com.jolly.hoverworth.listeners.WindowListener;
 import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class HoverWorth extends JavaPlugin {
     private WorthFile worthFile;
 
@@ -23,7 +25,8 @@ public final class HoverWorth extends JavaPlugin {
         saveDefaultConfig();
         worthFile = new WorthFile(this);
         PacketEvents.getAPI().init();
-        getCommand("hwreload").setExecutor(new Reload(this));
+        Objects.requireNonNull(getCommand("hwreload"), "hwreload command is missing from plugin.yml")
+                .setExecutor(new Reload(this));
         getLogger().info("HoverWorth enabled ✅");
     }
 

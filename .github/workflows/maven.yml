@@ -20,11 +20,11 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Build and verify Java 25 / Paper 26.1.2 compatibility
+        run: ./scripts/verify-compatibility.sh --file pom.xml
 
       - name: Upload plugin jar
         uses: actions/upload-artifact@v4
         with:
-          name: ItemEconomy-Java25
+          name: HoverWorth-Paper-26.1.2-Java25
           path: target/*.jar
