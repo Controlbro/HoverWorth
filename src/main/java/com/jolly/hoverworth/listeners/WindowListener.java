@@ -21,6 +21,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class WindowListener implements PacketListener {
     private final HoverWorth plugin;
@@ -151,7 +152,7 @@ public class WindowListener implements PacketListener {
 
         InventoryType type = view.getType();
         String title = ChatColor.stripColor(view.getTitle());
-        if (title == null || isCustomTitle(title.toLowerCase())) return false;
+        if (title == null || isCustomTitle(title.toLowerCase(Locale.ROOT))) return false;
 
         return switch (type) {
             case CHEST, ENDER_CHEST, BARREL, HOPPER, FURNACE, BLAST_FURNACE, SMOKER,
